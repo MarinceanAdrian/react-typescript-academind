@@ -1,12 +1,15 @@
 
 import React from 'react';
 import Todos from './components/Todos';
+import NewTodo from './components/NewTodo';
 
-const  App: React.FC = () => {
+
+const App: React.FC = () => {
 
   return (
     <div>
-      <Todos items={['Learn React', 'Learn CSS']}/>
+      <NewTodo  />
+      <Todos />
     </div>
   );
 }

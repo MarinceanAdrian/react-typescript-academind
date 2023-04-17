@@ -1,13 +1,13 @@
+import TodoComponent from './TodoComponent'
+import { useContext } from 'react';
+import { TodosContext } from './store/todos-context';
 
-
-type TodosProps = {
-    items: string[]
-}
-
-const Todos: React.FC<TodosProps> = (props) => {
+const Todos: React.FC = (props) => {
+    const { items } = useContext(TodosContext)
     return (
         <ul>
-            {props.items.map(item => <li>{item}</li>)}
+            {items.map(item => <TodoComponent key={item.id} {...item} />)}
+            {items.length === 0 && <p>No todos!</p>}
         </ul>
     )
 }
